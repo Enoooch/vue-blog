@@ -4,7 +4,7 @@
     .txt
       .title Blog
     Menu
-  Footer
+  // Footer
 </template>
 
 <script>

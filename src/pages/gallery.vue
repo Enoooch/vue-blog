@@ -4,7 +4,7 @@
     .txt
       .title Gallery
     Menu
-  Footer
+  // Footer
 </template>
 
 <script>
