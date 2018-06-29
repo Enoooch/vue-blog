@@ -4,7 +4,7 @@
     .txt
       .title Support
     Menu
-  Footer
+  // Footer
 </template>
 
 <script>
