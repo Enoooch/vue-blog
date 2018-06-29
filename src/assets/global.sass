@@ -1,0 +1,43 @@
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+*
+  padding: 0
+  margin: 0
+  box-sizing: border-box
+  position: relative
+html
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,'Helvetica Neue',Helvetica,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',Arial,sans-serif
+  -webkit-font-smoothing: antialiased
+  font-size: 15px
+  background: #000
+  #banner
+    background: linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(../assets/banner.jpg) 50% 50% / cover no-repeat
+  .content
+    background: none
+    color: white
+    padding: 100px 25px
+  .full
+    width: 100%
+    min-height: 100vh
+  .center
+    display: flex
+    justify-content: center
+    align-items: center
+  .txt
+    text-align: center
+    user-select: none
+    text-transform: uppercase
+    color: white
+    animation: fadeIn 3s both 0s
+    .title
+      font-size: 18px
+      font-weight: 500
+      letter-spacing: 3.5px
+    .sub-title
+      margin-top: 5px
+      font-size: 10px
+      letter-spacing: 3.5px
+      opacity: .35
