@@ -1,6 +1,7 @@
 <template lang="pug">
 #home
-  section#banner.content.full.center
+  section.content.full.center
+    #banner
     .txt
       .title BorderLands
       .sub-title With Imagination
