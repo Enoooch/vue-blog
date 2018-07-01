@@ -1,6 +1,7 @@
 <template lang="pug">
 #blog
-  section#banner.content.full.center
+  section.content.full.center
+    #banner
     .txt
       .title Blog
     Menu
@@ -26,4 +27,6 @@ export default {
 
 <style scoped lang="sass">
 #blog
+  #banner
+    background: linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(../assets/blog.jpeg) 50% 50% / cover no-repeat
 </style>
