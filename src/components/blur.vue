@@ -1,8 +1,7 @@
 <template lang="pug">
-  .placeholder(:data-large="imgLarge")
-    img.img-small(:src="imgSmall")
-    .pb
-    img.img-large
+  .placeholder
+    img.img-small(:src="imgSmall", @load="onLoad()", :class="{loaded: loaded}")
+    img.img-large(:src="imgLarge", @load="onLoad()", :class="{loaded: loaded}")
 </template>
 
 <script>
@@ -10,30 +9,13 @@ export default {
   props: ['imgLarge', 'imgSmall'],
   data() {
     return {
-
+      loaded: false
     }
   },
-  mounted () {
-    var placeholder = document.querySelector('.placeholder'),
-      small = placeholder.querySelector('.img-small'),
-      large = placeholder.querySelector('.img-large')
-
-    // 1: load small image and show it
-    var img = new Image()
-    img.src = small.src
-    img.onload = function () {
-      small.classList.add('loaded')
+  methods: {
+    onLoad () {
+      this.loaded = true
     }
-
-    // 2: load large image
-    large.src = placeholder.dataset.large
-    large.onload = function () {
-      large.classList.add('loaded')
-    }
-    // placeholder.appendChild(imgLarge)
-  },
-  components: {
-
   }
 }
 </script>
@@ -52,8 +34,7 @@ export default {
     img
       position: absolute
       opacity: 0
-      width: 100vw
-      height: 100vh
+      width: 100%
       object-fit: cover
       transition: opacity 1s linear
       &.loaded
@@ -61,8 +42,4 @@ export default {
     .img-small
       filter: blur(50px)
       transform: scale(1)
-    .pb
-      width: 100%
-      height: 100%
-      padding-bottom: 100%
 </style>

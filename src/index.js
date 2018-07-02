@@ -5,6 +5,7 @@ import gallery from './pages/gallery'
 import blog from './pages/blog'
 import support from './pages/support'
 import VueRouter from 'vue-router'
+import components from './lib/components'
 
 Vue.config.productionTip = false
 
@@ -33,6 +34,7 @@ const router = new VueRouter({
 })
 
 Vue.use(VueRouter)
+Vue.use(components)
 
 new Vue({
   el: '#app',
