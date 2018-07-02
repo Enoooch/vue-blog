@@ -16,10 +16,6 @@
 
 <script>
 
-import Menu from '../components/menu.vue'
-import Footer from '../components/footer.vue'
-import blur from '../components/blur.vue'
-
 export default {
   data() {
     return {
@@ -29,9 +25,7 @@ export default {
   methods: {
 
   },
-  components: {
-    Menu, Footer, blur
-  }
+  components: {}
 }
 </script>
 
