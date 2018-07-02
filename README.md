@@ -1,6 +1,6 @@
-# didi-exchange
+# vue-blog
 
-> Event for didi
+> A blog based on Vue.js
 
 ## Commands
 
