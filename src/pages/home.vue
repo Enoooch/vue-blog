@@ -1,7 +1,8 @@
 <template lang="pug">
 #home
   section.content.full.center
-    #banner
+    blur#banner(imgLarge="/img/banner.jpg", imgSmall="/img/banner-blur.jpg")
+    .shadow
     .txt
       .title BorderLands
       .sub-title With Imagination
@@ -17,6 +18,7 @@
 
 import Menu from '../components/menu.vue'
 import Footer from '../components/footer.vue'
+import blur from '../components/blur.vue'
 
 export default {
   data() {
@@ -28,7 +30,7 @@ export default {
 
   },
   components: {
-    Menu, Footer
+    Menu, Footer, blur
   }
 }
 </script>

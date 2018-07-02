@@ -1,7 +1,8 @@
 <template lang="pug">
 #support
   section.content.full.center
-    #banner
+    blur#banner(imgLarge="/img/support.jpeg", imgSmall="/img/support-blur.jpg")
+    .shadow
     .txt
       .title Support
     Menu
@@ -12,6 +13,7 @@
 
 import Menu from '../components/menu.vue'
 import Footer from '../components/footer.vue'
+import blur from '../components/blur.vue'
 
 export default {
   data() {
@@ -20,7 +22,7 @@ export default {
     }
   },
   components: {
-    Menu, Footer
+    Menu, Footer, blur
   }
 }
 </script>
@@ -28,5 +30,5 @@ export default {
 <style scoped lang="sass">
 #support
   #banner
-    background: linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(../assets/support.jpeg) 50% 50% / cover no-repeat
+    // background: linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(../assets/img/support.jpeg) 50% 50% / cover no-repeat
 </style>
