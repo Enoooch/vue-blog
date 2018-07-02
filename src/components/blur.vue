@@ -1,7 +1,7 @@
 <template lang="pug">
   .placeholder
-    img.img-small(:src="imgSmall", @load="onLoad()", :class="{loaded: loaded}")
-    img.img-large(:src="imgLarge", @load="onLoad()", :class="{loaded: loaded}")
+    img.img-small(:src="imgSmall", @load="onLoad_s()", :class="{loaded: loaded_s}")
+    img.img-large(:src="imgLarge", @load="onLoad_l()", :class="{loaded: loaded_l}")
 </template>
 
 <script>
@@ -9,12 +9,16 @@ export default {
   props: ['imgLarge', 'imgSmall'],
   data() {
     return {
-      loaded: false
+      loaded_s: false,
+      loaded_l: false,
     }
   },
   methods: {
-    onLoad () {
-      this.loaded = true
+    onLoad_s () {
+      this.loaded_s = true
+    },
+    onLoad_l () {
+      this.loaded_l = true
     }
   }
 }
