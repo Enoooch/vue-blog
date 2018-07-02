@@ -1,7 +1,8 @@
 <template lang="pug">
 #blog
   section.content.full.center
-    #banner
+    blur#banner(imgLarge="/img/blog.jpeg", imgSmall="/img/blog-blur.jpg")
+    .shadow
     .txt
       .title Blog
     Menu
@@ -12,6 +13,7 @@
 
 import Menu from '../components/menu.vue'
 import Footer from '../components/footer.vue'
+import blur from '../components/blur.vue'
 
 export default {
   data() {
@@ -20,7 +22,7 @@ export default {
     }
   },
   components: {
-    Menu, Footer
+    Menu, Footer, blur
   }
 }
 </script>
@@ -28,5 +30,5 @@ export default {
 <style scoped lang="sass">
 #blog
   #banner
-    background: linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(../assets/blog.jpeg) 50% 50% / cover no-repeat
+    // background: linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(../assets/img/blog.jpeg) 50% 50% / cover no-repeat
 </style>
