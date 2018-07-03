@@ -1,7 +1,7 @@
 <template lang="pug">
 #home
   section.content.full.center
-    blur#banner(imgLarge="/img/banner.jpg", imgSmall="/img/banner-blur.jpg")
+    blur#banner(imgLarge="/img/home.jpeg", imgSmall="/img/home-blur.jpg")
     .shadow
     .txt
       .title BorderLands

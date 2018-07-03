@@ -1,12 +1,27 @@
 <template lang="pug">
   .placeholder
-    img.img-small(:src="imgSmall", @load="onLoad_s()", :class="{loaded: loaded_s}")
+    img.img-small(:src="imgSmall", @load="onLoad_s()", :class="{loaded: loaded_s}", v-if="imgSmall")
+    img.img-small.loaded(:style="{backgroundColor: bgColor}", v-else)
     img.img-large(:src="imgLarge", @load="onLoad_l()", :class="{loaded: loaded_l}")
 </template>
 
 <script>
 export default {
-  props: ['imgLarge', 'imgSmall'],
+  props: {
+    imgLarge: {
+      type: String,
+      default: ''
+      // required: true
+    },
+    imgSmall: {
+      type: String,
+      default: ''
+    },
+    bgColor: {
+      type: String,
+      default: '#fff'
+    }
+  },
   data() {
     return {
       loaded_s: false,
@@ -46,4 +61,5 @@ export default {
     .img-small
       filter: blur(50px)
       transform: scale(1)
+      transition: opacity .6s linear
 </style>
