@@ -9,7 +9,7 @@
     "dev": "poi",
     "build": "poi build",
     "report": "poi build --bundle-report",
-    "deploy": "yarn build && rsync -r dist/* root@47.100.193.157:/usr/share/nginx/html -avh --delete",
+    "deploy": "yarn build && rsync -r dist/ root@47.100.193.157:/usr/share/nginx/html -avh --delete",
     "serve": "serve dist --single"
   },
   "author": {

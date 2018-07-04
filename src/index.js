@@ -1,11 +1,33 @@
 import Vue from 'vue'
-import App from './components/App.vue'
+import App from './pages/App.vue'
 import home from './pages/home'
 import gallery from './pages/gallery'
 import blog from './pages/blog'
 import support from './pages/support'
 import VueRouter from 'vue-router'
-import components from './lib/components'
+import upperFirst from 'lodash/upperFirst'
+import camelCase from 'lodash/camelCase'
+
+// *** basic globally register components ***
+// import components from './lib/components'
+// Vue.use(components)
+
+// *** automatic globally register components ***
+const requireComponent = require.context(
+  './components',
+  false,
+  /.vue$/
+)
+
+requireComponent.keys().forEach(fileName => {
+  const componentConfig = requireComponent(fileName)
+  const componentName = upperFirst(
+    camelCase(
+      fileName.replace(/^\.\/(.*)\.\w+$/, '$1')
+    )
+  )
+  Vue.component(componentName, componentConfig.default || componentConfig)
+})
 
 Vue.config.productionTip = false
 
@@ -34,7 +56,6 @@ const router = new VueRouter({
 })
 
 Vue.use(VueRouter)
-Vue.use(components)
 
 new Vue({
   el: '#app',
