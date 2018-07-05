@@ -7,7 +7,6 @@ import support from './pages/support'
 import VueRouter from 'vue-router'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
-import scrollReveal from './lib/animation'
 
 // *** basic globally register components ***
 // import components from './lib/components'
@@ -60,9 +59,6 @@ Vue.use(VueRouter)
 
 new Vue({
   el: '#app',
-  mounted () {
-    scrollReveal()
-  },
   render: h => h(App),
   router
 })

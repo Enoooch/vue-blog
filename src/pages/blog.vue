@@ -18,6 +18,8 @@
 
 <script>
 
+import scrollReveal from '../lib/animation'
+
 export default {
   data() {
     return {
@@ -25,7 +27,7 @@ export default {
     }
   },
   mounted () {
-
+    scrollReveal()
   },
   components: {}
 }

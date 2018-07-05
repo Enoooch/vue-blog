@@ -14,7 +14,7 @@ function scrollReveal () {
 
     // Time in milliseconds.
     duration: 500,
-    delay: 500,
+    delay: 200,
 
     // Starting angles in degrees, will transition from these values to 0 in all axes.
     rotate: {
