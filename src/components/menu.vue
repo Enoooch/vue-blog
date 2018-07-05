@@ -1,5 +1,5 @@
 <template lang="pug">
-  header.menu
+  header.menu(:class='{ scrolled: scrolled }')
     .center
       router-link(to="/") home
       router-link(to="/gallery") gallery
@@ -11,7 +11,26 @@
 export default {
   data() {
     return {
+      scrolled: false
+    }
+  },
+  created () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  mounted () {
 
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+  methods: {
+    handleScroll () {
+      let windowHeight = window.innerHeight
+        || document.documentElement.clientWidth
+        || document.body.clientWidth
+      if (window.scrollY + 70 >= windowHeight) {
+        this.scrolled = true
+      } else this.scrolled = false
     }
   },
   components: {
@@ -28,6 +47,7 @@ export default {
     width: 100%
     z-index: 2
     padding: 30px
+    transition: background .2s ease
     .center
       text-transform: uppercase
       // animation: fadeIn 3s both
@@ -38,6 +58,7 @@ export default {
         color: white
         letter-spacing: .7px
         font-size: 12px
+        transition: color .2s ease
         &:before
           content: ""
           position: absolute
@@ -54,4 +75,10 @@ export default {
           &:before
             transform: scaleX(1)
             visibility: visible
+  .scrolled
+    background: white
+    box-shadow: 0 -5px 15px 0 #CED4DA
+    .center
+      a
+        color: black
 </style>

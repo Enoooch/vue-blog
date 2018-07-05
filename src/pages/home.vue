@@ -3,7 +3,7 @@
   section.content.full.center
     blur#banner(imgLarge="/img/home.jpeg", imgSmall="/img/home-blur.jpg")
     .shadow
-    .txt
+    .banner-txt
       .title BorderLands
       .sub-title With Imagination
     Menu

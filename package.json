@@ -9,7 +9,7 @@
     "dev": "poi",
     "build": "poi build",
     "report": "poi build --bundle-report",
-    "deploy": "yarn build && rsync -r dist/ root@47.100.193.157:/usr/share/nginx/html -avh --delete",
+    "deploy": "yarn build && rsync -r dist/ root@47.100.193.157:/srv/enoch -avh --delete",
     "serve": "serve dist --single"
   },
   "author": {
@@ -23,6 +23,7 @@
     "promise-polyfill": "^6.0.2",
     "pug": "^2.0.3",
     "sass-loader": "^7.0.1",
+    "scrollreveal": "^3.4.0",
     "vue-one-size": "^0.0.5",
     "vue-router": "^3.0.1"
   },
