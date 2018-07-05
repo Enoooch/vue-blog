@@ -29,6 +29,7 @@ html
   -webkit-font-smoothing: antialiased
   font-size: 15px
   background: #000
+  font-size: 125%
   #banner
     // background: linear-gradient(to bottom right, rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(../assets/img/banner.jpg) 50% 50% / cover no-repeat
     // animation: fadeIn 3s ease-out
@@ -54,12 +55,12 @@ html
     width: 100%
     height: 100%
     position: absolute
-  .txt
+  .banner-txt
     text-align: center
     user-select: none
     text-transform: uppercase
     color: white
-    animation: fadeIn 3s both 0s
+    animation: fadeIn 3s both .5s
     .title
       font-size: 18px
       font-weight: 500
@@ -69,3 +70,19 @@ html
       font-size: 10px
       letter-spacing: 3.5px
       opacity: .35
+  .txt
+    overflow: hidden
+    > *
+    transition: opacity .5s ease
+    h3
+      font-weight: 400
+      margin-top: 2rem
+      line-height: 2rem
+      font-size: 1.728rem
+      margin-bottom: .63935rem
+      padding-top: .36065rem
+    p
+      line-height: 2rem
+      margin-bottom: 1.36999rem
+      padding-top: .63001rem
+      font-family: sofia-pro-l, sans-serif

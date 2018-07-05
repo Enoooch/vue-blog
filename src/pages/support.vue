@@ -3,10 +3,10 @@
   section.content.full.center
     blur#banner(imgLarge="/img/support.jpeg", imgSmall="/img/support-blur.jpg")
     .shadow
-    .txt
+    .banner-txt
       .title Support
     Menu
-  // Footer
+  Footer
 </template>
 
 <script>
