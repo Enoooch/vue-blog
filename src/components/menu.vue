@@ -81,4 +81,6 @@ export default {
     .center
       a
         color: black
+        &:before
+          background-color: black
 </style>
