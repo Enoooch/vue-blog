@@ -78,4 +78,22 @@ function scrollReveal () {
   );
 }
 
-export default scrollReveal
+function objMask () {
+  window.sr.reveal('.mask-container > *', {
+    origin: 'left',
+    distance: '0',
+    opacity: 1,
+    scale: 1,
+    viewFactor: -0.1,
+    beforeReveal: function (domEl) {
+      if (domEl.tagName.toLowerCase() === 'img') {
+        domEl.classList.add('img-reveal')
+      } else domEl.classList.add('reveal')
+    }
+  })
+}
+
+export {
+  scrollReveal,
+  objMask
+}
