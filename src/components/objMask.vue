@@ -27,7 +27,7 @@ export default {
   overflow: hidden
   img
     object-fit: cover
-    left: 0%
+    left: -100%
     transition: all 275ms ease-in-out 600ms
   .mask
     position: absolute

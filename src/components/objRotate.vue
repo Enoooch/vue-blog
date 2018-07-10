@@ -22,8 +22,6 @@ export default {
   },
   data() {
     return {
-      container: null,
-      inner: null,
       mouse: {
         x: 0,
         y: 0
@@ -36,22 +34,19 @@ export default {
 
   },
   mounted() {
-    this.container = this.$refs.container
-    this.inner = this.$refs.inner
     this.rotate(this.$refs.container,this.$refs.inner)
-    window.addEventListener('scroll', this.setOrigin(this.$refs.container))
   },
   methods: {
     setOrigin(e) {
       this.originX = e.offsetLeft + e.clientWidth / 2
       this.originY = e.getBoundingClientRect().top + e.clientHeight / 2
-      // console.log(e.offsetLeft,e.clientWidth,this.originX, this.originY)
     },
     updatePosition(event) {
       var e = event || window.event
+      this.setOrigin(this.$refs.container)
       this.mouse.x = e.clientX - this.originX
       this.mouse.y = (e.clientY - this.originY) * -1
-      console.log(this.mouse.x, this.mouse.y)
+      // console.log(this.mouse.x, this.mouse.y)
     },
     updateTransformStyle(x, y, inner) {
       var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)"
@@ -64,8 +59,8 @@ export default {
     update(event) {
       this.updatePosition(event)
       this.updateTransformStyle(
-        ((this.mouse.y) / this.container.offsetHeight / 2),
-        ((this.mouse.x) / this.container.offsetWidth / 2),
+        ((this.mouse.y) / this.$refs.container.offsetHeight / 3),
+        ((this.mouse.x) / this.$refs.container.offsetWidth / 3),
         this.$refs.inner
       )
     },
@@ -76,7 +71,11 @@ export default {
       this.$refs.inner.style = ""
     },
     onMouseMoveHandler(event) {
-      this.update(event)
+      let counter = 0
+      let refreshRate = 5
+      if (counter++ % refreshRate === 0) {
+        this.update(event)
+      }
     },
     rotate(container, inner) {
       this.$refs.container.onmousemove = this.onMouseMoveHandler
@@ -126,7 +125,7 @@ export default {
     .img
       display: table-cell
       width: 55%
-      transition: transform 0.8s ease
+      transition: transform 0.8s linear
     @media screen and (max-width:768px)
       display: block
       padding: 3%
