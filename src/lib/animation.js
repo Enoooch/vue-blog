@@ -81,6 +81,7 @@ function scrollReveal () {
 function objMask () {
   window.sr.reveal('.mask-container > *', {
     origin: 'left',
+    duration: 1200,
     distance: '0',
     opacity: 1,
     scale: 1,
