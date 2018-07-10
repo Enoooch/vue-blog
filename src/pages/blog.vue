@@ -15,7 +15,10 @@
         p Positive feedback was consistently received from the customer throughout the delivery of the project; delivered on time and on budget. Training was also successfully delivered using the “train the trainer” approach and Thomas Cook will rely on Inspiretec throughout 2018 on a number of other projects which are to be announced soon.
   section.img-grid
     article
-      objMask(src="/img/o.jpg")
+      objMask(src="/img/o3.jpg")
+  section.blog-grid
+    objRotate(:title="blog.title", :content="blog.content", :link="blog.link", :left="index % 2 !== 0", v-for="(blog, index) in blogs", :key="blog.id")
+      objMask(:src="blog.img")
   Footer
 </template>
 
@@ -26,7 +29,43 @@ import { scrollReveal, objMask } from '../lib/animation'
 export default {
   data() {
     return {
-
+      blogs: [
+        {
+          id: 0,
+          title: 'Natural World Safaris.',
+          content: 'The beginning of an adventure via a new Sitecore experience.',
+          img: '/img/o2.jpg',
+          link: ''
+        },
+        {
+          id: 1,
+          title: 'G Touring.',
+          content: 'Paving the way for global tours and adventures.',
+          img: '/img/o.jpg',
+          link: ''
+        },
+        {
+          id: 2,
+          title: 'Travelopia.',
+          content: 'Business critical reservations platform, e-commerce websites and CRM implementations for multiple travel brands.',
+          img: '/img/o4.jpg',
+          link: ''
+        },
+        {
+          id: 3,
+          title: '',
+          content: '',
+          img: '',
+          link: ''
+        },
+        {
+          id: 4,
+          title: '',
+          content: '',
+          img: '',
+          link: ''
+        }
+      ]
     }
   },
   mounted () {
@@ -53,6 +92,7 @@ export default {
       padding-left: 2rem
       padding-right: 2rem
   .img-grid
+    margin: 100px auto
     font-size: 0
     article
       max-height: 600px
@@ -60,4 +100,7 @@ export default {
       display: flex
       align-items: center
       justify-content: center
+  .blog-grid
+    width: 90%
+    margin: 0 auto
 </style>

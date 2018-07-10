@@ -2,7 +2,6 @@
   .mask-container
     img(:src="src")
     .mask
-
 </template>
 
 <script>
@@ -24,10 +23,11 @@ export default {
 <style scoped lang="sass">
 .mask-container
   width: 100%
-  background: white
+  font-size: 0
+  overflow: hidden
   img
     object-fit: cover
-    left: -100%
+    left: 0%
     transition: all 275ms ease-in-out 600ms
   .mask
     position: absolute
@@ -37,6 +37,7 @@ export default {
     right: 0
     width: 120%
     background: #222223
+    opacity: 1
     transition: all 650ms ease-in-out 500ms
   .img-reveal
     left: 0
