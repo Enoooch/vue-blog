@@ -68,7 +68,11 @@ export default {
       ]
     }
   },
-  mounted () {
+  mounted() {
+    scrollReveal()
+    objMask()
+  },
+  updated() {
     scrollReveal()
     objMask()
   },

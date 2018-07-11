@@ -13,6 +13,9 @@
 </template>
 
 <script>
+
+import { TweenLite } from 'gsap'
+
 export default {
   props: {
     title: '',
@@ -30,57 +33,34 @@ export default {
       originY: 0,
     }
   },
-  created() {
-
-  },
   mounted() {
     this.rotate(this.$refs.container,this.$refs.inner)
   },
   methods: {
-    setOrigin(e) {
-      this.originX = e.offsetLeft + e.clientWidth / 2
-      this.originY = e.getBoundingClientRect().top + e.clientHeight / 2
+    onMouseEnterHandler(e) {
+
     },
-    updatePosition(event) {
-      var e = event || window.event
-      this.setOrigin(this.$refs.container)
-      this.mouse.x = e.clientX - this.originX
-      this.mouse.y = (e.clientY - this.originY) * -1
-      // console.log(this.mouse.x, this.mouse.y)
+    onMouseMoveHandler(e) {
+      var container = this.$refs.container
+      var inner = this.$refs.inner
+      var cx = Math.ceil(container.clientWidth / 2.0)
+      var cy = Math.ceil(container.clientHeight / 2.0)
+      var dx = e.clientX - container.offsetLeft - cx
+      var dy = e.clientY - container.getBoundingClientRect().top - cy
+
+      var tiltx = - (dy / cy)
+      var tilty = (dx / cx)
+      var radius = Math.sqrt(Math.pow(tiltx,2) + Math.pow(tilty,2))
+      var degree = (radius * 2)
+      TweenLite.to(inner, 1.2, {transform:'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)'})
     },
-    updateTransformStyle(x, y, inner) {
-      var style = "rotateX(" + x + "deg) rotateY(" + y + "deg)"
-      inner.style.transform = style
-      inner.style.webkitTransform = style
-      inner.style.mozTranform = style
-      inner.style.msTransform = style
-      inner.style.oTransform = style
-    },
-    update(event) {
-      this.updatePosition(event)
-      this.updateTransformStyle(
-        ((this.mouse.y) / this.$refs.container.offsetHeight / 3),
-        ((this.mouse.x) / this.$refs.container.offsetWidth / 3),
-        this.$refs.inner
-      )
-    },
-    onMouseEnterHandler(event) {
-      this.update(event)
-    },
-    onMouseLeaveHandler() {
-      this.$refs.inner.style = ""
-    },
-    onMouseMoveHandler(event) {
-      let counter = 0
-      let refreshRate = 5
-      if (counter++ % refreshRate === 0) {
-        this.update(event)
-      }
+    onMouseLeaveHandler(e) {
+      TweenLite.to(this.$refs.inner, 1.2, {ease: Power1.ease, transform: 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)'})
     },
     rotate(container, inner) {
-      this.$refs.container.onmousemove = this.onMouseMoveHandler
-      this.$refs.container.onmouseleave = this.onMouseLeaveHandler
-      this.$refs.container.onmouseenter = this.onMouseEnterHandler
+      container.onmouseenter = this.onMouseEnterHandler
+      container.onmousemove = this.onMouseMoveHandler
+      container.onmouseleave = this.onMouseLeaveHandler
     }
   },
   components: {
@@ -94,7 +74,7 @@ export default {
     display: table
     width: 100%
     margin: 5rem 0
-    perspective: 30px
+    perspective: 300px
     .txt
       display: table-cell
       vertical-align: middle
@@ -107,6 +87,9 @@ export default {
         text-decoration: none
         transition: color 250ms ease, background-color 250ms ease
         margin-left: 10%
+        cursor: pointer
+        &:hover
+          color: #9e9e9e
         h3
           line-height: 1.2rem
           font-size: 1.44rem
@@ -125,7 +108,7 @@ export default {
     .img
       display: table-cell
       width: 55%
-      transition: transform 0.8s linear
+      // transition: all 500ms cubic-bezier(.215,.61,.355,1)
     @media screen and (max-width:768px)
       display: block
       padding: 3%
