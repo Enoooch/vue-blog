@@ -26,7 +26,8 @@
     "sass-loader": "^7.0.1",
     "scrollreveal": "^3.4.0",
     "vue-one-size": "^0.0.5",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuetify": "^1.1.4"
   },
   "devDependencies": {
     "poi": "^9.0.0",

@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Vuetify from 'vuetify'
 import App from './pages/App.vue'
 import home from './pages/home'
 import gallery from './pages/gallery'
@@ -66,6 +67,7 @@ const router = new VueRouter({
 })
 
 Vue.use(VueRouter)
+Vue.use(Vuetify)
 
 new Vue({
   el: '#app',

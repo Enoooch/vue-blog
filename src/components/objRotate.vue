@@ -73,8 +73,8 @@ export default {
   article
     display: table
     width: 100%
-    margin: 5rem 0
     perspective: 300px
+    margin: 0 0 10rem
     .txt
       display: table-cell
       vertical-align: middle
