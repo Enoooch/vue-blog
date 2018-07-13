@@ -5,7 +5,7 @@
     .shadow
     .banner-txt
       .title Blog
-    Menu
+  Menu
   section.list
     article
       .txt
@@ -14,8 +14,9 @@
         p TCSB needed a replacement complaint handling system. We deployed TravelCRM Complaint Handling from project initiation to go-live in under a three-month time period. Thomas Cook also use Travelink for the fulfilment of direct passenger and travel agent bookings, along with a number of our legacy products: EasySell, TravelCat, TravelConnect, TravelCRM and TravelGateway.
         p Positive feedback was consistently received from the customer throughout the delivery of the project; delivered on time and on budget. Training was also successfully delivered using the “train the trainer” approach and Thomas Cook will rely on Inspiretec throughout 2018 on a number of other projects which are to be announced soon.
   section.img-grid
-    article
-      objMask(src="/img/o3.jpg")
+    // article
+    //   objMask(src="/img/o3.jpg", :r2l="true")
+    v-parallax(src="/img/p1.jpg", height="500")
   section.blog-grid
     objRotate(:title="blog.title", :content="blog.content", :link="blog.link", :left="index % 2 !== 0", v-for="(blog, index) in blogs", :key="blog.id")
       objMask(:src="blog.img")
@@ -53,16 +54,16 @@ export default {
         },
         {
           id: 3,
-          title: '',
-          content: '',
-          img: '',
+          title: 'Thomas Cook.',
+          content: 'Delivering reservations platforms and B2B and B2C website experiences for a timeless brand since 1997.',
+          img: '/img/o5.jpg',
           link: ''
         },
         {
           id: 4,
-          title: '',
-          content: '',
-          img: '',
+          title: 'HRG Worldwide.',
+          content: 'A travel retail selling system for loyalty members of a leading Canadian bank.',
+          img: '/img/o6.jpg',
           link: ''
         }
       ]

@@ -1,5 +1,6 @@
 
 import ScrollReveal from 'scrollreveal'
+import { TweenLite } from 'gsap'
 
 window.sr = new ScrollReveal()
 
@@ -79,17 +80,27 @@ function scrollReveal () {
 }
 
 function objMask () {
-  window.sr.reveal('.mask-container > *', {
+  window.sr.reveal('.mask-container', {
     origin: 'left',
-    duration: 1200,
+    duration: 100,
     distance: '0',
     opacity: 1,
     scale: 1,
     viewFactor: -0.1,
-    beforeReveal: function (domEl) {
-      if (domEl.tagName.toLowerCase() === 'img') {
-        domEl.classList.add('img-reveal')
-      } else domEl.classList.add('reveal')
+    beforeReveal: function (el) {
+      let ease = Power1.easeInOut
+      TweenLite.to(el.childNodes[0], .275, {
+        delay: .6, transform: 'translateX(0%)', ease: ease
+      })
+      if (~el.childNodes[0].className.indexOf('r2l')) {
+        TweenLite.to(el.childNodes[1], .65, {
+          delay: .5, transform: 'translateX(-120%)', ease: ease
+        })
+      } else {
+        TweenLite.to(el.childNodes[1], .65, {
+          delay: .5, transform: 'translateX(120%)', ease: ease
+        })
+      }
     }
   })
 }

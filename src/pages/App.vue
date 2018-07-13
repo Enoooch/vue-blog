@@ -4,6 +4,7 @@
 </template>
 
 <script>
+  import 'vuetify/dist/vuetify.min.css'
   export default {
     name: 'app'
   }
