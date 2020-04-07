@@ -5,6 +5,7 @@
       router-link(to="/gallery") gallery
       router-link(to="/blog") blog
       router-link(to="/support") support
+      //- router-link(to="/privacy") privacy
 </template>
 
 <script>

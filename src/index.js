@@ -5,6 +5,7 @@ import home from './pages/home'
 import gallery from './pages/gallery'
 import blog from './pages/blog'
 import support from './pages/support'
+import privacy from './pages/privacy'
 import VueRouter from 'vue-router'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
@@ -33,7 +34,7 @@ requireComponent.keys().forEach(fileName => {
 Vue.config.productionTip = false
 
 const router = new VueRouter({
-  mode: 'history',
+  // mode: 'history',
   routes: [{
     name: 'home',
     path: '/',
@@ -53,6 +54,11 @@ const router = new VueRouter({
     name: 'support',
     path: '/support',
     component: support
+  },
+  {
+    name: 'privacy',
+    path: '/privacy',
+    component: privacy
   }],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
