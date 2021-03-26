@@ -55,7 +55,7 @@ export default {
       TweenLite.to(inner, 1.2, {transform:'rotate3d(' + tiltx + ', ' + tilty + ', 0, ' + degree + 'deg)'})
     },
     onMouseLeaveHandler(e) {
-      TweenLite.to(this.$refs.inner, 1.2, {ease: Power1.ease, transform: 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)'})
+      TweenLite.to(this.$refs.inner, 1.2, {ease: 'power1.in', transform: 'matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1)'})
     },
     rotate(container, inner) {
       container.onmouseenter = this.onMouseEnterHandler

@@ -88,7 +88,7 @@ function objMask () {
     scale: 1,
     viewFactor: -0.1,
     beforeReveal: function (el) {
-      let ease = Power1.easeInOut
+      let ease = 'power1.inOut'
       TweenLite.to(el.childNodes[0], .275, {
         delay: .6, transform: 'translateX(0%)', ease: ease
       })
