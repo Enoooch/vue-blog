@@ -19,11 +19,10 @@
     "gsap": "^3.6.1",
     "normalize.css": "^7.0.0",
     "object-assign": "^4.1.1",
-    "promise-polyfill": "^6.0.2",
+    "promise-polyfill": "^8.2.1",
     "scrollreveal": "^3.4.0",
     "vue-one-size": "^0.0.5",
-    "vue-router": "^3.0.1",
-    "vuetify": "^1.1.4"
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "poi": "^9.0.0",
