@@ -26,10 +26,10 @@
     "vuetify": "^1.1.4"
   },
   "devDependencies": {
-    "node-sass": "^4.9.0",
     "poi": "^9.0.0",
     "poi-preset-bundle-report": "^2.0.0",
     "pug": "^3.0.2",
+    "sass": "^1.43.5",
     "sass-loader": "^7.0.1",
     "serve": "^11.3.2"
   }
