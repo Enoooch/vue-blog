@@ -4832,11 +4832,6 @@ number-is-nan@^1.0.0:
   resolved "https://registry.npmmirror.com/number-is-nan/download/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-numeral@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.nlark.com/numeral/download/numeral-2.0.6.tgz#4ad080936d443c2561aed9f2197efffe25f4e506"
-  integrity sha1-StCAk21EPCVhrtnyGX7//iX05QY=
-
 object-assign@^4.0.1, object-assign@^4.1.0, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.nlark.com/object-assign/download/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
@@ -7354,13 +7349,6 @@ vue-loader@^13.0.0:
     vue-hot-reload-api "^2.2.0"
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.6.0"
-
-vue-one-size@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.npmmirror.com/vue-one-size/download/vue-one-size-0.0.5.tgz#bdf6bd04993e6a49b790a6d1d6745d437be82f86"
-  integrity sha1-vfa9BJk+akm3kKbR1nRdQ3voL4Y=
-  dependencies:
-    numeral "^2.0.6"
 
 vue-router@^3.0.1:
   version "3.5.3"
